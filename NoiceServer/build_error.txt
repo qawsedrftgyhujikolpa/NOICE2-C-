@@ -1,0 +1,12 @@
+  Determining projects to restore...
+  蠕ｩ蜈・ｯｾ雎｡縺ｮ縺吶∋縺ｦ縺ｮ繝励Ο繧ｸ繧ｧ繧ｯ繝医・譛譁ｰ縺ｧ縺吶・
+C:\Program Files\dotnet\sdk\10.0.100-rc.1.25451.107\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.RuntimeIdentifierInference.targets(345,5): message NETSDK1057: 繝励Ξ繝薙Η繝ｼ迚医・ .NET 繧剃ｽｿ逕ｨ縺励※縺・∪縺吶Ｉttps://aka.ms/dotnet-support-policy 繧偵＃隕ｧ縺上□縺輔＞ [D:\code\NOICE_speed_up\NoiceServer\NoiceServer.csproj]
+D:\code\NOICE_speed_up\NoiceServer\NoiceProcessor.cs(73,17): error CS0117: 'Cv2' 縺ｫ 'AbsDiff' 縺ｮ螳夂ｾｩ縺後≠繧翫∪縺帙ｓ [D:\code\NOICE_speed_up\NoiceServer\NoiceServer.csproj]
+
+繝薙Ν繝峨↓螟ｱ謨励＠縺ｾ縺励◆縲・
+
+D:\code\NOICE_speed_up\NoiceServer\NoiceProcessor.cs(73,17): error CS0117: 'Cv2' 縺ｫ 'AbsDiff' 縺ｮ螳夂ｾｩ縺後≠繧翫∪縺帙ｓ [D:\code\NOICE_speed_up\NoiceServer\NoiceServer.csproj]
+    0 蛟九・隴ｦ蜻・
+    1 繧ｨ繝ｩ繝ｼ
+
+邨碁℃譎る俣 00:00:01.49

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOICE - The Digital Void</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22black%22/></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="void-background" id="voidBg"></div>
+
+    <div class="container">
+        <header>
+            <h1 class="logo">NOICE<span>.</span></h1>
+            <p class="tagline">存在の消去による意思の可視化</p>
+        </header>
+
+        <main>
+            <div id="dropzone" class="dropzone">
+                <div class="content">
+                    <div class="icon">✧</div>
+                    <h2>虚無へ捧ぐ動画を選択</h2>
+                    <p class="desc">MP4/WebM をここにドロップ</p>
+                    <input type="file" id="fileInput" hidden accept="video/mp4,video/webm">
+                    <button class="btn" onclick="document.getElementById('fileInput').click()">SELECT</button>
+                </div>
+            </div>
+
+            <div id="viewer" class="viewer hidden">
+                <div class="display-card">
+                    <div class="status-overlay">
+                        <span id="statusIcon">◈</span>
+                        <span id="statusText">虚無を待機中...</span>
+                    </div>
+                    <img id="voidImage" src="" alt="The Void">
+                </div>
+
+                <div class="control-panel">
+                    <div class="panel-section">
+                        <h3>PARAMETERS</h3>
+                        <div class="control-grid">
+                            <div class="control-group">
+                                <label>Scale / 解像度</label>
+                                <select id="settingScale">
+                                    <option value="1.0">High (1080p)</option>
+                                    <option value="0.5" selected>Mid (720p)</option>
+                                    <option value="0.25">Low (360p)</option>
+                                </select>
+                            </div>
+                            <div class="control-group">
+                                <label>Speed / 速度</label>
+                                <select id="settingSpeed">
+                                    <option value="0.5">Slow</option>
+                                    <option value="1.0" selected>Normal</option>
+                                    <option value="2.0">Vibe</option>
+                                </select>
+                            </div>
+                            <div class="control-group">
+                                <label>Audio / 音響</label>
+                                <select id="settingAudio">
+                                    <option value="mute" selected>Silence (Mute)</option>
+                                    <option value="original">Original Audio</option>
+                                    <option value="white">White Noise</option>
+                                    <option value="brown">Brown Noise</option>
+                                </select>
+                            </div>
+                            <div class="control-group">
+                                <label>Nitro / 高速化</label>
+                                <select id="settingNitro">
+                                    <option value="false" selected>Normal</option>
+                                    <option value="true">Nitro (Turbo)</option>
+                                </select>
+                            </div>
+                            <div class="control-group">
+                                <label>Color / 彩色</label>
+                                <select id="settingColor">
+                                    <option value="true" selected>Luminous</option>
+                                    <option value="false">Void (B&W)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-section">
+                        <h3>ACTIONS</h3>
+                        <div class="action-grid">
+                            <button class="btn action-btn primary" id="downloadBtn">
+                                <span class="btn-icon">📥</span>
+                                <span class="btn-text">PROCESS & DOWNLOAD</span>
+                            </button>
+                            <div id="progressContainer" class="progress-outer hidden">
+                                <div class="progress-info">
+                                    <span class="progress-label">Rendering Progress</span>
+                                    <span id="progressPercent" class="progress-value">0%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div id="progressBar" class="progress-fill"></div>
+                                </div>
+                            </div>
+                            <button class="btn action-btn danger" id="resetBtn">
+                                <span class="btn-icon">⚡</span>
+                                <span class="btn-text">RESET SYSTEM</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hardware-info">
+                    <div class="info-item">
+                        <span class="label">GPU Engine</span>
+                        <span class="value">Engaged</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Memory Pool</span>
+                        <span class="value">Allocated</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="console-footer">
+            <div id="logConsole" class="log-console">
+                > System ready. Waiting for biological input...
+            </div>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+﻿2026-02-10 14:47:06 [Information] Now listening on: http://127.0.0.1:8000
+2026-02-10 14:47:06 [Information] Application started. Press Ctrl+C to shut down.
+2026-02-10 14:47:06 [Information] Hosting environment: Production
+2026-02-10 14:47:06 [Information] Content root path: D:\code\NOICE_speed_up\NoiceServer
+2026-02-10 14:49:09 [Information] Now listening on: http://127.0.0.1:8000
+2026-02-10 14:49:09 [Information] Application started. Press Ctrl+C to shut down.
+2026-02-10 14:49:09 [Information] Hosting environment: Production
+2026-02-10 14:49:09 [Information] Content root path: D:\code\NOICE_speed_up\NoiceServer
+2026-02-10 14:49:19 [Information] Request starting HTTP/1.1 GET http://127.0.0.1:8000/ - - -
+2026-02-10 14:49:19 [Information] Executing endpoint 'HTTP: GET /'
+2026-02-10 14:49:19 [Information] Setting HTTP status code 404.
+2026-02-10 14:49:19 [Information] Executed endpoint 'HTTP: GET /'
+2026-02-10 14:49:19 [Information] Request finished HTTP/1.1 GET http://127.0.0.1:8000/ - 404 0 - 213.9486ms
+2026-02-10 14:49:21 [Information] Request starting HTTP/1.1 GET http://127.0.0.1:8000/ - - -
+2026-02-10 14:49:21 [Information] Executing endpoint 'HTTP: GET /'
+2026-02-10 14:49:21 [Information] Setting HTTP status code 404.
+2026-02-10 14:49:21 [Information] Executed endpoint 'HTTP: GET /'
+2026-02-10 14:49:21 [Information] Request finished HTTP/1.1 GET http://127.0.0.1:8000/ - 404 0 - 0.6873ms
+2026-02-10 14:50:26 [Information] Now listening on: http://127.0.0.1:8000
+2026-02-10 14:50:26 [Information] Application started. Press Ctrl+C to shut down.
+2026-02-10 14:50:26 [Information] Hosting environment: Production
+2026-02-10 14:50:26 [Information] Content root path: D:\code\NOICE_speed_up\NoiceServer
+2026-02-10 14:50:30 [Information] Request starting HTTP/1.1 GET http://127.0.0.1:8000/ - - -
+2026-02-10 14:50:30 [Information] Executing endpoint 'HTTP: GET /'
+2026-02-10 14:50:30 [Information] Setting HTTP status code 404.
+2026-02-10 14:50:30 [Information] Executed endpoint 'HTTP: GET /'
+2026-02-10 14:50:30 [Information] Request finished HTTP/1.1 GET http://127.0.0.1:8000/ - 404 0 - 134.7572ms
+2026-02-10 14:50:32 [Information] Request starting HTTP/1.1 GET http://127.0.0.1:8000/ - - -
+2026-02-10 14:50:32 [Information] Executing endpoint 'HTTP: GET /'
+2026-02-10 14:50:32 [Information] Setting HTTP status code 404.
+2026-02-10 14:50:32 [Information] Executed endpoint 'HTTP: GET /'
+2026-02-10 14:50:32 [Information] Request finished HTTP/1.1 GET http://127.0.0.1:8000/ - 404 0 - 0.6049ms
