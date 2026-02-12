@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NoiceServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb8c94efa456b5a847af7d8433f18f118cf0fa10")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b46ff57df632f0c322d776ff557a47b58bb2d07")]
 [assembly: System.Reflection.AssemblyProductAttribute("NoiceServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NoiceServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

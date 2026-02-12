@@ -63,6 +63,18 @@ foreach (var d in new[] { uploadDir, outputDir })
         Directory.CreateDirectory(d);
 }
 
+// 【起動時クリーンアップ】前回の残骸を消す。サーバー再起動のたびにゴミが消える。
+static void CleanDir(string dir)
+{
+    if (!Directory.Exists(dir)) return;
+    foreach (var f in Directory.GetFiles(dir))
+    {
+        try { File.Delete(f); } catch { /* ロック中なら無視 */ }
+    }
+}
+CleanDir(uploadDir);
+CleanDir(outputDir);
+
 // レンダリング進捗管理用
 var progressStore = new ConcurrentDictionary<string, double>();
 
@@ -194,6 +206,8 @@ app.MapGet("/process_download/{tempName}/{outputName}", (
     finally
     {
         progressStore.TryRemove(outputName, out _); // 終わったら消す
+        // 【修正】レンダリング完了後、アップロードされた元動画を消す
+        try { if (File.Exists(tempPath)) File.Delete(tempPath); } catch { }
     }
 });
 
@@ -204,12 +218,36 @@ app.MapGet("/progress/{outputName}", (string outputName) =>
     return Results.Json(new { progress = -1 }); // 存在しない
 });
 
-app.MapGet("/download/{filename}", (string filename) =>
+app.MapGet("/download/{filename}", async (string filename, HttpContext ctx) =>
 {
     var path = Path.Combine(outputDir, filename);
     if (!File.Exists(path))
         return Results.Json(new { error = "File not found." });
-    return Results.File(path, "video/mp4", filename);
+
+    // ファイルを返した後、少し待ってから削除する（転送完了を待つ）
+    var result = Results.File(path, "video/mp4", filename);
+    // バックグラウンドで遅延削除
+    _ = Task.Run(async () =>
+    {
+        await Task.Delay(10000); // 10秒待ってから消す
+        try { if (File.Exists(path)) File.Delete(path); } catch { }
+    });
+    return result;
+});
+
+// 【新規】手動クリーンアップ: RESET ボタンから呼べるゴミ掃除エンドポイント
+app.MapDelete("/cleanup", () =>
+{
+    int deleted = 0;
+    foreach (var dir in new[] { uploadDir, outputDir })
+    {
+        if (!Directory.Exists(dir)) continue;
+        foreach (var f in Directory.GetFiles(dir))
+        {
+            try { File.Delete(f); deleted++; } catch { }
+        }
+    }
+    return Results.Json(new { status = "ok", deleted });
 });
 
 app.Run();

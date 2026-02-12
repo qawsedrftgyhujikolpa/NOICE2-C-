@@ -115,7 +115,11 @@ document.addEventListener('DOMContentLoaded', () => {
     elements.audio.onchange = () => playNoise(elements.audio.value);
     elements.nitro.onchange = startStreaming;
     elements.isColor.onchange = startStreaming;
-    elements.resetBtn.onclick = () => location.reload();
+    // RESETボタン: サーバー上のゴミファイルも消してからリロード
+    elements.resetBtn.onclick = async () => {
+        try { await fetch('/cleanup', { method: 'DELETE' }); } catch (e) { }
+        location.reload();
+    };
 
     const downloadBtn = document.getElementById('downloadBtn');
     downloadBtn.onclick = async () => {
